@@ -5,69 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>lch的生日礼物</title>
-    <meta name="referrer" content="no-referrer" />
-
-    <script>
-      window.onload = function () {
-        var url = "./information.json";
-        var request = new XMLHttpRequest();
-        request.open("get", url);
-        request.send(null);
-        request.onload = function () {
-          if (request.status == 200) {
-            var json = JSON.parse(request.responseText);
-            var video = document.getElementById("video");
-            var in_row = document.createElement("div");
-            var i = 0;
-            video.setAttribute(
-              "style",
-              "display:flex;flex-direction: column;      flex: 1;      justify-content: space-around;      align-items: center;      border: 1px solid;      background-color:#F5F5F5 ;      border-radius: 25px;      margin-top: 30px;      width: 1200px;   "
-            );
-            json.map((information) => {
-              var inform = document.createElement("infrom");
-              var title = document.createElement("div");
-              var img = document.createElement("img");
-              var link = document.createElement("div");
-              title.innerHTML = `${information.title}`;
-              link.innerHTML = `${information.link}`;
-              inform.setAttribute(
-                "style",
-                "display:flex;     flex:1;      border: 1px solid green;      background-color: white;      border-radius: 10px;      height: 152px; width:200px;     flex-direction: column;      justify-content: center;align-items: center;margin:10px"
-              );
-              title.setAttribute(
-                "style",
-                "      font-size: 20px; border-bottom:1px solid black;     overflow: hidden;height:48px;width:200px;"
-              );
-              img.setAttribute("src", `${information.img}`);
-              img.setAttribute("alt", "picture");
-              img.setAttribute(
-                "style",
-                "      border-right: 1px solid;      border-radius: 10px;      justify-content: center;      align-items: center;      height: 100px;      width: 150px;"
-              );
-              document.getElementsByTagName("img").herf = link.innerHTML;
-              title.innerHTML = title.innerHTML.link(link.innerHTML);
-              // img = img.link("link.innerHTML");
-              // document.write(img);
-              img.innerHTML.link(link.innerHTML);
-              inform.append(title);
-              inform.append(img);
-              in_row.append(inform);
-              i++;
-              if (i == 5) {
-                i = 0;
-                video.append(in_row);
-                var tmp = document.createElement("div");
-                in_row = tmp;
-              }
-              in_row.setAttribute(
-                "style",
-                "display:flex;   flex-direction: row;      justify-content: space-around;      height: 150px;      width: 1100px;      padding: 15px;      margin-top: 20px;      margin-bottom: 10px;"
-              );
-            });
-          }
-        };
-      };
-    </script>
   </head>
   <style>
     body {
@@ -133,7 +70,7 @@
       border-radius: 10px;
       padding: 5px;
     }
-    .shipinlan {
+    .dongtailan {
       flex-direction: column;
       flex: 1;
       justify-content: space-around;
@@ -143,37 +80,35 @@
       border-radius: 25px;
       margin-top: 30px;
       width: 1200px;
+      background-image: url(./背景\(1\).jpeg);
     }
-    .shipin_row {
+    .dongtai {
       flex-direction: row;
-      justify-content: space-around;
       height: 150px;
+      border: 1px solid green;
+      background-color: white;
+      border-radius: 25px;
       width: 1100px;
       padding: 15px;
       margin-top: 20px;
       margin-bottom: 10px;
     }
-    .shipin {
-      flex: 1;
-      border: 1px solid green;
-      background-color: white;
-      border-radius: 10px;
-      height: 150px;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
     .cover {
+      justify-content: space-around;
       border-right: 1px solid;
-      border-radius: 10px;
-      justify-content: center;
-      align-items: center;
-      height: 100px;
-      width: 150px;
+      padding-right: 10px;
+    }
+    .information {
+      flex-direction: column;
+      flex: 1;
     }
     .title {
-      font-size: 25px;
+      font-size: 30px;
       overflow: hidden;
+    }
+    .describtion {
+      overflow: hidden;
+      font-size: 15px;
     }
     .baise {
       background-color: white;
@@ -182,7 +117,7 @@
       text-decoration: none;
     }
   </style>
-
+  <!-- <body class="flex" style="flex-direction: column"> -->
   <body class="flex" style="flex-direction: column" link="black" vlink="black">
     <!-- 顶部栏 -->
     <div class="flex toubu">
@@ -206,7 +141,7 @@
       <div class="flex daohang">
         <a href="index.html"><b>动态</b></a>
       </div>
-      <div class="flex daohang" style="">
+      <div class="flex daohang">
         <a href="video.html"><b>视频</b></a>
       </div>
       <div class="flex daohang">
@@ -216,10 +151,152 @@
         <a href="others.html"><b>杂七杂八</b></a>
       </div>
     </div>
-    <!-- 视频内容 -->
-    <div id="video"></div>
+    <!-- 动态栏 -->
+    <div class="flex dongtailan" style="overflow: auto">
+      <!-- 动态 -->
+      <div
+        class="flex"
+        style="font-size: 30px; align-self: flex-start; padding-left: 50px"
+      >
+      </div>
+      <div class="flex dongtai">
+        <div class="flex cover" style="flex: 2">
+          <img
+            src="./video/视频封面1.jpg"
+            alt="【改编】ツナガルコネクト（相连的connect）-《Love
+            Live！虹咲学园学园偶像同好会》第一季动画第六集插入曲"
+            height="140px"
+          />
+        </div>
+        <div class="flex information" style="flex: 8">
+          <div class="flex title" style="flex: 1">
+            【改编】ツナガルコネクト（相连的connect）-《Love
+            Live！虹咲学园学园偶像同好会》第一季动画第六集插入曲
+          </div>
+          <div class="flex describtion" id="count" style="flex: 3">
+            感谢依然姐的视频orz@依然洳雪<br/>
+            听着听着就上头了，偶尔试一试和以往不同风格的改编。大概在考虑以后作为更新的一种形式。<br/>
+            改编底子是ナガエン的https://www.youtube.com/watch?v=7nh5ob4_ihY<br/>
+            BASS参照了https://www.youtube.com/watch?v=UZt4xFsA9YY<br/>
+            电吉他参照了https://www.youtube.com/watch?v=YLvuDpTMRHI<br/>
+            谱子文件老地方，动态置顶度盘链接。不过根本没调整，多半是弹不了的。而且吉他用得也少，重点在钢琴上了。
+          </div>
+        </div>
+      </div>
+
+<div class="flex dongtai">        <div class="flex cover" style="flex: 2">          <img  src="
+https://i2.hdslb.com/bfs/archive/142a1218a859aa389bc92107f1ef33de8f06300f.jpg@640w_400h_1c.webp
+"alt="
+[吉他×口琴×mad] flower 姬野星奏角色曲生贺
+"height="140px"/>        </div>        <div class="flex information" style="flex: 8">          <div class="flex title" style="flex: 1">
+[吉他×口琴×mad] flower 姬野星奏角色曲生贺
+</div>          <div class="flex describtion" style="flex: 3">
+演奏：四月（口琴）&吉他（船佬）<br/>
+视频剪辑：四月<br/> 修音&编曲：船佬<br/>
+ 
+哈喽这里是策划（大概？）四月。星奏生贺作，也是在凌晨十分准时和大家见面了。最初是什么时候有做《flower》的想法的呢，大约是听了以flower作为前奏的東の空から始まる世界之后萌生的吧。然而很快就意识到，作为不会编曲的选手而言，难度还是有些太大了，直接套用原曲伴奏又有些怪怪的。而就在这个时候，船佬，我滴超人，他站了出来，在我不要脸的各种暗示下（删掉），他帮忙编曲了一版《flower》的合奏。当我第一次听样本预览的时候，我仿佛看到了星奏站在山坡上，俯瞰小镇。所以，我也不能辜负这样一个作品，随机连夜爆肝到凌晨一点，剪辑出了flower的mad，由于游戏能使用的视频素材也只有op，加上想制作一个星奏专属的投稿，因而加入了一些游戏cg的静图作为补充。而后是配乐部分，船佬也是担任了伴奏一角，而与我而言，技术成了最大的阻碍，气息始终不太稳，最后的成品也还是有不少瑕疵，算是小小的遗憾。不过最终还是赶在星奏生日当天零点，将这个作品展现在了各位面前，如果能想你回想起与星奏度过的短暂却又难以忘怀的时光片段，那也就传达到了。
+ 
+《恋彼女》是我gal的启蒙之作，刚开始玩gal就遇到如此让人十分感慨的作品，也不知是好是坏。借这次策划的契机，我也是重温二周目星奏线与最终te。当年结束掉te后，久久无法平静，也没有勇气再度回味，如今再回首，依旧五味杂陈。带着结果的二周目，更发现了一些剧情的细节与暗示，以及也加深了那种无力与惋惜之感。与我个人而言的话，我应当会选择彩音，但是星奏是绝对没有办法忘记的。她像是镜中花水中月，以为能碰触到她，想将她揽入怀中，却也是化为泡影，充斥着命运的嘲弄。初见时，觉得星奏无法理喻，什么事情是不能两个人一起面对的呢，而如今却慢慢理解了星奏的心情。我无法也不愿去更深层次的评述星奏是好是坏，但是我想做的，只有注视着她，即使是远去的背影。如果她是内心深处挥之不去的遗憾，那也便就让其成为这么一个遗憾，时间久了，也就慢慢习惯了，带着它，一直走下去。即便如此，我也会幻想，虽然可能只是幻想，但是睁开眼，她微笑着在我身边，就像从前一个小男孩，拉着一个小女孩的手，跑出教室那般。始终这么期待着，或许是缥缈的终章。
+ 
+今天其实也是洸太郎的生日，生命中总是会有些这样的巧合，所以一定要和星奏一起，坚强地生活下去。此情可待，已成追忆。
+ 
+生日快乐啊，sena~’
+</div>        </div>      </div>
+<div class="flex dongtai">        <div class="flex cover" style="flex: 2">          <img  src="
+https://i0.hdslb.com/bfs/archive/ecbd31d6476022b4a58fdc18e71e73ecf0483313.jpg@640w_400h_1c.webp
+"alt="
+【吉他重奏谱】そして愛になる（ゲーム「9-nine-はるいろはるこいはるのかぜ」EDテーマ）
+"height="140px"/>        </div>        <div class="flex information" style="flex: 8">          <div class="flex title" style="flex: 1">
+【吉他重奏谱】そして愛になる（ゲーム「9-nine-はるいろはるこいはるのかぜ」EDテーマ）
+</div>          <div class="flex describtion" style="flex: 3">
+nine的几个角色里最喜欢学姐，可能因为这个原因，几首ED里最喜欢的也是这首。
+在刚推完的时候就把谱子做好了，今天偶然翻到了，反正也懒得弹了，就发了。谱子文件都在动态置顶
+......
+最近还推了Re:LieF，它的音乐我也很喜欢，已经做好te的ED的谱了，假期应该会弹。
+</div>        </div>      </div>
+<div class="flex dongtai">        <div class="flex cover" style="flex: 2">          <img  src="
+https://i0.hdslb.com/bfs/archive/49130f3dc622ad15d31050343ad630484402882d.jpg@640w_400h_1c.webp
+"alt="
+【木吉他重奏】NEO SKY, NEO MAP!（はみ版改编）
+"height="140px"/>        </div>        <div class="flex information" style="flex: 8">          <div class="flex title" style="flex: 1">
+【木吉他重奏】NEO SKY, NEO MAP!（はみ版改编）
+</div>          <div class="flex describtion" style="flex: 3">
+听着动画里的钢琴版，突然想起来hami很久之前在推特上发的版本，于是弹了。
+还是双吉他的形式，谱子动态置顶。
+......
+</div>        </div>      </div>
+<div class="flex dongtai">        <div class="flex cover" style="flex: 2">          <img  src="
+https://i1.hdslb.com/bfs/archive/4ab929a5fcb187702ff37544ab568dd118ba6fef.jpg@640w_400h_1c.webp
+"alt="
+【吉他重奏谱】Stars we chase-《LoveLive!虹咲学园学园偶像同好会》第二季 第九话插入曲
+"height="140px"/>        </div>        <div class="flex information" style="flex: 8">          <div class="flex title" style="flex: 1">
+【吉他重奏谱】Stars we chase-《LoveLive!虹咲学园学园偶像同好会》第二季 第九话插入曲
+</div>          <div class="flex describtion" style="flex: 3">
+改编自ナガエン的钢琴谱BV1Av4y1w7ym<br/>
+因为是自己熟悉的调，改编思路也很清晰，所以出人意料的，两个小时就完成了，而且暂时没想到什么需要大改或者增添的部分、
+wowow的那段特别耳熟，只不过还没想起来是和啥像，
+然后是01：09开始的那段，让我想起了我特别喜欢的星夜之雪（ストロボナイツ），可能就是这个原因，一下子就戳到我了，还挺简单的，如果这段时间有空闲可能要自己弹一下。（到时候应该又要改改细节，会重新传一下谱）
+文件还是老地方动态置顶、
+</div>        </div>      </div>
+<div class="flex dongtai">        <div class="flex cover" style="flex: 2">          <img  src="
+https://i0.hdslb.com/bfs/archive/ccf2afe0b66de296f1781b07bf096641b9c0b504.jpg@640w_400h_1c.webp
+"alt="
+【木吉他重奏】LOVELIVE μ's组曲串烧（翻弹自はみ）
+"height="140px"/>        </div>        <div class="flex information" style="flex: 8">          <div class="flex title" style="flex: 1">
+【木吉他重奏】LOVELIVE μ's组曲串烧（翻弹自はみ）
+</div>          <div class="flex describtion" style="flex: 3">
+久违地弹了缪斯的曲子，量很大，所以作为500的纪念应该没问题。<br/>
+翻自はみ的作品缪斯组曲Vol.2：https://www.youtube.com/watch?v=HShPZGtS-00 （原来B站有搬运的，但是现在找不到了，Vol1和Vol3都还在，就2没了，不过在网易云搜“LoveLive! Medley Festival (Guitar) Vol.2”还能找到）<br/>
+节选了前面半截比较简单的部分，根据自己的情况做了简化和改编。谱子也传到老地方动态置顶了，希望你们喜欢。
+
+00:00 Listen to my heart!!<br/>
+00:34 sweet&sweet holiday<br/>
+01:27 ラブノベルス<br/>
+02:14 微熱からMystery<br/>
+03:04 夏、終わらないで。<br/>
+03:58 告白日和、です! （之前预告的片段）<br/>
+04:40 Love marginal<br/>
+</div>        </div>      </div>
+<div class="flex dongtai">        <div class="flex cover" style="flex: 2">          <img  src="
+https://i1.hdslb.com/bfs/archive/f46b68f1e5788a8f49bd3f5dc0fa85d6f1818e9c.jpg@640w_400h_1c.webp
+"alt="
+【吉他重奏谱】Infinity！Our wings!!-《LoveLive!虹咲学园学园偶像同好会》第二季 第六话插入曲
+"height="140px"/>        </div>        <div class="flex information" style="flex: 8">          <div class="flex title" style="flex: 1">
+【吉他重奏谱】Infinity！Our wings!!-《LoveLive!虹咲学园学园偶像同好会》第二季 第六话插入曲
+</div>          <div class="flex describtion" style="flex: 3">
+参照ナガエン的版本的改编BV1Wv4y1P7dB<br/>
+怎么说呢，感觉没有Q4那首那么抓耳，但是比DD的好搞一点。成品钢琴味还是有点重，毕竟速度180了。
+其实刚听的时候我是没觉得速度有那么快的，这个速度有点把握不住（不只是速度问题，抄完修好之后听了几遍歌感觉挺迷茫的，不知道该加什么），属于是质量比较低的抄作业了。
+文件都在动态置顶
+</div>        </div>      </div>
+<div class="flex dongtai">        <div class="flex cover" style="flex: 2">          <img  src="
+https://i1.hdslb.com/bfs/archive/3a87e30e234c51ad126a72a87580b7e9f26856e5.jpg@640w_400h_1c.webp
+"alt="
+【木吉他重奏】繚乱！ビクトリーロード（抒情版改编）
+"height="140px"/>        </div>        <div class="flex information" style="flex: 8">          <div class="flex title" style="flex: 1">
+【木吉他重奏】繚乱！ビクトリーロード（抒情版改编）
+</div>          <div class="flex describtion" style="flex: 3">
+节选了最后一分钟部分做的改编，很简单的双吉他。让我们一起从蹦迪中冷静下来，听一听这段旋律吧。<br/>
+......分割线......<br/>
+刚听到这首歌完整版的时候，步梦唱完后的那句、以及结尾的这段，真的惊了。
+然后就非常想试一试，根据想象中的样子改下来，结果确实很不错，就弹了。可惜的是没找到比较好的方式把其他部分的旋律加进去，所以只有结尾的这段。
+</div>        </div>      </div>
+<div class="flex dongtai">        <div class="flex cover" style="flex: 2">          <img  src="
+https://i2.hdslb.com/bfs/archive/e85c8eb0a1d4efa8427e6cc25ab0d740655adee1.jpg@640w_400h_1c.webp
+"alt="
+【吉他重奏谱】あなたの理想のヒロイン（你理想中的女主角）
+"height="140px"/>        </div>        <div class="flex information" style="flex: 8">          <div class="flex title" style="flex: 1">
+【吉他重奏谱】あなたの理想のヒロイン（你理想中的女主角）
+</div>          <div class="flex describtion" style="flex: 3">
+和new winding road几乎是同时一起制作的谱，参照了はみ的版本：BV1gA411j75B
+本来打算写一轨高音的和声的（音轨4），结果自己给写废了。翻弹这首不自己搞出点啥新花样感觉没多少意思，就一直放着懒得动了。上传的文件里保留了那一轨的，视频里没有放，因为没放听感更佳。<br/>
+虽然但是，指法还是经过调整的，相比起其他只有谱没弹的会舒服一点。<br/>
+......分割线......<br/>
+或许有的时候放下对はみ的模仿去自己捣鼓原曲更好？
+</div>        </div>      </div>
+
     <div style="position: fixed; bottom: 20px; right: 25px; z-index: 100">
-      <audio src="./music/from Y to Y.mp3" controls="" autoplay="">
+      <audio src="./music/ryuryu (りゅーりゅー) _ 初音未来 (初音ミク) - Birthday (生日).mp3" controls="" autoplay="">
         当前浏览器不支持audio
       </audio>
     </div>
