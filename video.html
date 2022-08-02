@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>lch的生日礼物</title>
+    <meta name="referrer" content="no-referrer" />
+
+    <script>
+      window.onload = function () {
+        var url = "./information.json";
+        var request = new XMLHttpRequest();
+        request.open("get", url);
+        request.send(null);
+        request.onload = function () {
+          if (request.status == 200) {
+            var json = JSON.parse(request.responseText);
+            var video = document.getElementById("video");
+            var in_row = document.createElement("div");
+            var i = 0;
+            video.setAttribute(
+              "style",
+              "display:flex;flex-direction: column;      flex: 1;      justify-content: space-around;      align-items: center;      border: 1px solid;      background-color:#F5F5F5 ;      border-radius: 25px;      margin-top: 30px;      width: 1200px;   "
+            );
+            json.map((information) => {
+              var inform = document.createElement("infrom");
+              var title = document.createElement("div");
+              var img = document.createElement("img");
+              var link = document.createElement("div");
+              title.innerHTML = `${information.title}`;
+              link.innerHTML = `${information.link}`;
+              inform.setAttribute(
+                "style",
+                "display:flex;     flex:1;      border: 1px solid green;      background-color: white;      border-radius: 10px;      height: 152px; width:200px;     flex-direction: column;      justify-content: center;align-items: center;margin:10px"
+              );
+              title.setAttribute(
+                "style",
+                "      font-size: 20px; border-bottom:1px solid black;     overflow: hidden;height:48px;width:200px;"
+              );
+              img.setAttribute("src", `${information.img}`);
+              img.setAttribute("alt", "picture");
+              img.setAttribute(
+                "style",
+                "      border-right: 1px solid;      border-radius: 10px;      justify-content: center;      align-items: center;      height: 100px;      width: 150px;"
+              );
+              document.getElementsByTagName("img").herf = link.innerHTML;
+              title.innerHTML = title.innerHTML.link(link.innerHTML);
+              // img = img.link("link.innerHTML");
+              // document.write(img);
+              img.innerHTML.link(link.innerHTML);
+              inform.append(title);
+              inform.append(img);
+              in_row.append(inform);
+              i++;
+              if (i == 5) {
+                i = 0;
+                video.append(in_row);
+                var tmp = document.createElement("div");
+                in_row = tmp;
+              }
+              in_row.setAttribute(
+                "style",
+                "display:flex;   flex-direction: row;      justify-content: space-around;      height: 150px;      width: 1100px;      padding: 15px;      margin-top: 20px;      margin-bottom: 10px;"
+              );
+            });
+          }
+        };
+      };
+    </script>
+  </head>
+  <style>
+    body {
+      background-color: azure;
+      align-items: center;
+      background: url(./背景.jpeg) no-repeat center top fixed;
+    }
+    div {
+      margin: 2px;
+    }
+    img {
+      border-radius: 10%;
+    }
+    #count {
+      word-wrap: break-word;
+      word-break: keep-all;
+      font-weight: bolder;
+    }
+    .flex {
+      display: flex;
+    }
+    * {
+      font-family: 宋体;
+    }
+    /* * {
+      border: 1px solid;
+    } */
+    .toubu {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+    }
+    .id {
+      flex-direction: row;
+      align-items: center;
+      border-bottom: solid black;
+      padding: 10px;
+      justify-content: center;
+      background-color: white;
+      border-radius: 25px;
+    }
+    .introduction {
+      background-color: white;
+      align-items: center;
+      justify-content: center;
+      border-radius: 25px;
+      width: 800px;
+      padding: 10px;
+    }
+    .daohanglan {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      background-color: white;
+      border: 1px solid pink;
+      border-radius: 25px;
+      width: 1500px;
+      height: 50px;
+    }
+    .daohang {
+      background-color: pink;
+      border-radius: 10px;
+      padding: 5px;
+    }
+    .shipinlan {
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-around;
+      align-items: center;
+      border: 1px solid;
+      background-color: pink;
+      border-radius: 25px;
+      margin-top: 30px;
+      width: 1200px;
+    }
+    .shipin_row {
+      flex-direction: row;
+      justify-content: space-around;
+      height: 150px;
+      width: 1100px;
+      padding: 15px;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+    .shipin {
+      flex: 1;
+      border: 1px solid green;
+      background-color: white;
+      border-radius: 10px;
+      height: 150px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .cover {
+      border-right: 1px solid;
+      border-radius: 10px;
+      justify-content: center;
+      align-items: center;
+      height: 100px;
+      width: 150px;
+    }
+    .title {
+      font-size: 25px;
+      overflow: hidden;
+    }
+    .baise {
+      background-color: white;
+    }
+    a {
+      text-decoration: none;
+    }
+  </style>
+
+  <body class="flex" style="flex-direction: column" link="black" vlink="black">
+    <!-- 顶部栏 -->
+    <div class="flex toubu">
+      <!-- 头像&id部分 -->
+      <div class="flex id">
+        <img
+          src="./头像.jpg"
+          alt="picture"
+          width="80px"
+          style="border-radius: 80px"
+        />
+        <div>航宙船ヱゼキエル</div>
+      </div>
+      <!-- 简介部分 -->
+      <div class="flex introduction">
+        做吉他改编演奏简单重奏gal和lovelive曲子（越冷门越爱弹）
+      </div>
+    </div>
+    <!-- 导航栏 -->
+    <div class="flex daohanglan">
+      <div class="flex daohang">
+        <a href="index.html"><b>动态</b></a>
+      </div>
+      <div class="flex daohang" style="">
+        <a href="video.html"><b>视频</b></a>
+      </div>
+      <div class="flex daohang">
+        <a href="score.html"><b>乐谱</b></a>
+      </div>
+      <div class="flex daohang">
+        <a href="others.html"><b>杂七杂八</b></a>
+      </div>
+    </div>
+    <!-- 视频内容 -->
+    <div id="video"></div>
+    <div style="position: fixed; bottom: 20px; right: 25px; z-index: 100">
+      <audio src="./music/from Y to Y.mp3" controls="" autoplay="">
+        当前浏览器不支持audio
+      </audio>
+    </div>
+  </body>
+</html>
